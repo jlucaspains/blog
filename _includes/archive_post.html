@@ -1,0 +1,10 @@
+{% capture date %}{{ post.date }}{% endcapture %}
+{% capture this_year %}{{ date | date: "%Y" }}{% endcapture %}
+{% unless year == this_year %}
+	{% assign year = this_year %}
+	{% unless forloop.first %}
+		</section>
+	{% endunless %}
+	<section><h2 class="year">{{ date | date: "%Y" }}</h2>
+{% endunless %}
+<h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_string }}</time></span></h3>

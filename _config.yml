@@ -1,0 +1,44 @@
+#
+# Blog Settings
+#
+author: Lucas Pains
+url: http://lpains.com
+title: Pains
+subtitle: of a geek
+email_md5: 0ce5a3e31c584a3c81fa6a458810f2be
+subscribe_rss: http://lpains.com/feed.xml
+
+# accounts
+stackoverflow_user: LPains
+stackoverflow_user_id: 1462485
+
+github_user: jlucaspains
+github_repo_url: https://github.com/jlucaspains/blog/
+
+twitter_user: lucaspains
+twitter_tweet_count: 5
+twitter_show_replies: false
+twitter_tweet_button: true
+
+disqus_short_name: painsblog
+disqus_show_comment_count: true
+
+linkedin_user: lucaspains
+
+#google_analytics_tracking_id: UA-123456-1
+
+kramdown:
+  hard_wrap: false
+
+#
+# Jekyll Settings
+#
+permalink: /archive/:year/:month/:day/:title/
+paginate: 5
+paginate_path: "page/:num"
+category_dir: categories
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-paginate

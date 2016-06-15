@@ -1,0 +1,3 @@
+{% for tag in post.categories %}
+ <a href="#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+{% endfor %}

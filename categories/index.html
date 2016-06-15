@@ -1,0 +1,20 @@
+---
+layout: default
+title: categories
+---
+
+<article class="page">
+  <h1 class="title">categories</h1>
+  <div class="entry-content">
+    <div itemscope itemtype="http://schema.org/Blog">
+        {% for category in site.categories %}
+            <section>
+                <h2>{{ category[0] | capitalize }}</h2>
+                {% for post in category[1] %}
+                    <h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <small class="post-date">{{ post.date | date_to_string }}</small></h3>
+                {% endfor %}
+            </section>
+        {% endfor %}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,6 @@
+<div class="meta">
+	<span class="date">{% include post/date.html %}{{ time }}</span> 
+	{% if post.categories %}
+	| <span class="tags">{% include post/categories.html %}</span>
+	{% endif %}
+</div>
