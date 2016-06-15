@@ -18,8 +18,6 @@ As any other geek I do spend a lot of my personal time tinkering with technology
 
 But appart from a geek, I'm:
 
-Kung Fu instructor
-
-Snowboarder
-
-Volleybal player (even played semi-professional in Australia). 
+  * Kung Fu instructor
+  * Snowboarder
+  * Volleybal player (even played semi-professional in Australia). 
