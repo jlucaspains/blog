@@ -530,7 +530,7 @@ ul li a { -webkit-transition: all .2s ease-in;-moz-transition:all .2s ease-in;-o
 #content article .entry-content h2 + blockquote { margin-top: 30px; }
 #content article .entry-content table { line-height: 1.2em }
 #content article .entry-content table td { text-align: left }
-#content article .meta { color: #999;font-family:"Open Sans";font-weight:100;font-size:1.2em }
+#content article .meta { color: #999;font-family:"Open Sans";font-weight:100;font-size:1rem }
 #content article .meta .date { display: inline }
 #content article h1.title { font-family: "Open Sans";font-weight:800;font-size:5em;padding-bottom:15px; }
 #content article h1.title a { color: #333;-webkit-transition:color 0.3s;-moz-transition:color 0.3s;-o-transition:color 0.3s;transition:color 0.3s }

@@ -3,7 +3,6 @@ layout: page
 title: terms of use
 permalink: /terms/
 sharing: false
-date: 2016-6-14
 ---
 
 ## Privacy

@@ -11,7 +11,7 @@ title: categories
             <section>
                 <h2>{{ category[0] | capitalize }}</h2>
                 {% for post in category[1] %}
-                    <h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <small class="post-date">{{ post.date | date_to_string }}</small></h3>
+                    <h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <div class="meta" style="display: inline;"><span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_string }}</time></span></div></h3>
                 {% endfor %}
             </section>
         {% endfor %}

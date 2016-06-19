@@ -7,4 +7,4 @@
 	{% endunless %}
 	<section><h2 class="year">{{ date | date: "%Y" }}</h2>
 {% endunless %}
-<h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_string }}</time></span></h3>
+<h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <div class="meta" style="display: inline;"><span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_string }}</time></span></div></h3>

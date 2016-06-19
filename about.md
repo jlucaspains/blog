@@ -3,7 +3,6 @@ layout: page
 title: about
 permalink: /about/
 sharing: false
-date: 2016-6-14
 ---
 
 ## Yo!
@@ -14,10 +13,8 @@ I'm brasilian by birth but I had great opportunities to live in Brisbane - Austr
 I specialize in enterprise scale software architecture and developer mentoring.
 
 ## My kind of fun stuff
-As any other geek I do spend a lot of my personal time tinkering with technology but I do other stuff too. Believe me. 
-
-But appart from a geek, I'm:
+As any other geek I do spend a lot of my personal time tinkering with technology but I do other stuff too. For instance:
 
   * Kung Fu instructor
   * Snowboarder
-  * Volleybal player (even played semi-professional in Australia). 
+  * Volleybal player (even played semi-professional in Australia)
