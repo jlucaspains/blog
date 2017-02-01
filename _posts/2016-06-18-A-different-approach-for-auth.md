@@ -81,4 +81,5 @@ Note that in above examples, there is no check for a role, only whether the curr
 ## Ok, what are the drawbacks?
 As far as I can tell there is only one real drawback. It can be a little tricky to get your head around this concept. Although, the benefits become obvious really soon.
 
-Next: Resource/Claims based security in ASP.Net MVC and Web Api (check back soon) 
+
+Next: [Resource/Claims based security in ASP.Net MVC and Web Api]({{ site.baseurl }}{% link _posts/2016-10-20-MVC-with-WIF-and-claims-security %})
