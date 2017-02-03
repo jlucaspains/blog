@@ -26,10 +26,10 @@ In enterprise environments it is rather common to have a ERP like SAP or Microso
 ## Roles
 If there is one security concept that is widely misused is the concept of roles. I've seen so many applications that were designed to ask "Is user jdoe in role Admin?". The problem with this question is the fact that over time applications change, simple as that. When a role change, you will have to change the software to support it.
 
-Roles are not a bad thing, on contraire my friend, they are a great way to organize and drive security using business terms and business roles. In fact I would go as far as to say they are essential to good security setup. What should change is how business applications use them. Instead of asking "Is user jdoe in role Admin?", we should ask "Does user jdoe have access to resource App.Page?". As far as the application is concerned, there is no role Admin, it doesn't matter which role grants or revokes the access all that matter is whether the user have access to the resource or not. 
+Roles are not a bad thing, on contraire my friend, they are a great way to organize and drive security using business terms and business roles. In fact I would go as far as to say they are essential to a good security setup. What should change is how LOB applications use them. Instead of asking "Is user jdoe in role Admin?", we should ask "Does user jdoe have access to resource App.Page?". As far as the application is concerned, there is no role Admin, it doesn't matter which role grants or revokes the access all that matter is whether the user have access to the resource or not. 
 
 ## Claim
-Disclaimer: The below is an extract of [MSDN](https://msdn.microsoft.com/en-us/library/ee517291.aspx)
+Disclaimer: below is an extract of [MSDN](https://msdn.microsoft.com/en-us/library/ee517291.aspx)
 
 A claim is a piece of information used to identity something. It can be a name, e-mail, resource access or anything describing such thing. It is issued and signed by an issuer and you should only trust the claim as much as you trust the issuer itself. WIF represents claims with a Claim type, which has an Issuer property that allows you to find out who issued the claim.
 
