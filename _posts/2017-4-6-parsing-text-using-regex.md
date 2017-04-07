@@ -7,7 +7,7 @@ sharing: true
 categories: util
 ---
 
-A little while ago I had to build a desktop app that received input from devices which I had no control of. Although each implementation had similar requirements, the devices connected to the app were slightly different. And so were the inputs received from them. I've looked for other similar implementations and found that some people implemented device specific parsers and use configuration to select the correct parser. However, any change to the known inputs would cause the application to change along. Maybe there is a better way...
+A little while ago, I had to build a desktop app that received input from devices which I had no control of. Although each implementation had similar requirements, the devices connected to the app were slightly different and so were the inputs received from them. I've looked for other similar implementations and found that some people implemented device specific parsers. Furthermore, they used configuration to select the correct parser. I think there is at least one issue with this approach: any change to the known inputs would require the application to change as well. Maybe there is a better way...
 
 The trick I want to demonstrate relies on named group capturing from Regular Expression and a little fiddling with reflection.
 
