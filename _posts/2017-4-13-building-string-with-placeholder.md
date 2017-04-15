@@ -14,7 +14,7 @@ The idea is to use a template like `{BirthDate:D} My name is {FirstName} {LastNa
 Kudos to Scott Hanselman for [this solution](http://www.hanselman.com/blog/PermaLink,guid,2a0fdc2c-6b15-4a46-a802-0ebc0b8662d9.aspx). 
 
 Here is how it works:
-<pre brush="csharp">
+<pre class="brush:csharp">
 Person p = new Person();
 string foo = p.ToString("{BirthDate:D} My name is {FirstName} {LastName} and I'm cool.");
 Assert.Equal("Tuesday, January 22, 1974 My name is Scott Hanselman and I'm cool.", foo);
@@ -22,7 +22,7 @@ Assert.Equal("Tuesday, January 22, 1974 My name is Scott Hanselman and I'm cool.
 
 The nice part about this solution is that it won't throw any exceptions if it can't correctly build the string. It will just leave the bad part of the template in the result. Also, it supports Format Providers which also allows for specific culture targeting:
 
-<pre brush="csharp">
+<pre class="brush:csharp">
 // chinese formatting
 Person p = new Person();
 string foo = p.ToString("{BirthDate:D} My name is {FirstName} {LastName} and I'm cool.",new System.Globalization.CultureInfo("zh-cn"));
