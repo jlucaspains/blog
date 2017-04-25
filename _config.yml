@@ -25,7 +25,7 @@ disqus_show_comment_count: true
 
 linkedin_user: lucaspains
 
-#google_analytics_tracking_id: UA-123456-1
+google_analytics_tracking_id: UA-44645930-2
 
 kramdown:
   hard_wrap: false

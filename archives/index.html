@@ -7,7 +7,7 @@ title: archive
   <h1 class="title">archive</h1>
   <div class="entry-content">
     <div itemscope itemtype="http://schema.org/Blog">
-        {% for post in site.posts reverse %} 
+        {% for post in site.posts %} 
           {% include archive_post.html %}
         {% endfor %}
     </div>
