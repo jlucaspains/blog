@@ -4,7 +4,7 @@ title: "Migrating from TFS + TFVC to VSTS + git"
 date: 2018-7-15
 comments: true
 sharing: true
-categories: VSTS git
+categories: [VSTS, git]
 ---
 
 It seems like everybody uses git for source control nowadays. Heck, Microsoft is using git instead of its own TFVC. Although I've been using GitHub for open source projects for years now, most of my day is still spent in TFS. I finally got the green-light to move one fairly large project from TFS with TFVC to VSTS with git, this post is about my experience during the move.
