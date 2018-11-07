@@ -1,4 +1,8 @@
-{% capture categories %}{{ page.categories }}{{ post.categories }}{% endcapture %}
+{% if post %}
+    {% assign categories = post.categories %}
+  {% else %}
+    {% assign categories = page.categories %}
+  {% endif %}
 {% capture has_categories %}{{categories | size}}{% endcapture %}
 {% capture date %}{{ page.date }}{{ post.date }}{% endcapture %}
 {% capture has_date %}{{ date | size }}{% endcapture %}
@@ -15,7 +19,8 @@
 		{% if categories %}
 			<span class="tags">
 				{% for tag in categories %}
- 					<a href="{{ root_url }}/categories/#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+					 <a href="{{ root_url }}/categories/#{{ tag|slugize }}" class="post-tag">{{ tag }}</a>
+					 {% unless forloop.last %}&nbsp;{% endunless %}
 				{% endfor %}
 			</span>
 		{% endif %}
