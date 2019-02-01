@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Build and Deploy Xamarin.iOS to Test Flight with Azure DevOps"
-date: 2018-7-29
+date: 2019-1-31
 comments: true
 sharing: true
 categories: [xamarin-iOS]
@@ -37,7 +37,8 @@ The build pipeline is the heart of this post. I'm assuming you are familiar with
 ![Install Distribution Certificate]({{ site.url }}/images/posts/iOSAzureDevOpsBuildInstallCert.png)
 
 4. Install the provisioning profile
-   1. Import your .mobileprovisioning
+   1. Upload your .mobileprovisioning
+   2. If you are using Hosted builds, ensure to check the Remove Profile After Build option
 
 ![Install Provisioning Profile]({{ site.url }}/images/posts/iOSAzureDevOpsBuildInstallProfile.png)
 
@@ -67,8 +68,7 @@ export INFO="$BUILD_SOURCESDIRECTORY/Path/To/Info.plist"
 </pre>
 
 
-6. Install the correct version of nuget
-   1. Pick the version that works when building locally
+6. Install the version of nuget your project needs
 
 ![Nuget Install]({{ site.url }}/images/posts/iOSAzureDevOpsBuildNugetInstall.png)
 
@@ -77,7 +77,7 @@ export INFO="$BUILD_SOURCESDIRECTORY/Path/To/Info.plist"
 ![Nuget restore]({{ site.url }}/images/posts/iOSAzureDevOpsBuildNugetRestore.png)
 
 8. Build!
-   1. Make sure to select the right build configuration.
+   1. Select the right build configuration
    2. Check the Create app package option
    3. Provide `$(APPLE_CERTIFICATE_SIGNING_IDENTITY)` in Signing Identity. This is an automatic variable output from the Install Certificate step
    4. Provide `$(APPLE_PROV_PROFILE_UUID)` in the Provisioning Profile UUID. This is an automatic variable output from the Install Provisioning Profile step
