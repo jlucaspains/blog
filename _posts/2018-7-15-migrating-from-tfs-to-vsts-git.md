@@ -23,7 +23,11 @@ git-tfs is a two-way bridge between TFS and git. It essentially converts changes
 * [Install git](https://git-scm.com/downloads)
 * Install a minimal version of Visual Studio 2015. [VS2017 is not supported](https://github.com/git-tfs/git-tfs/issues/1054) by git-tfs yet.
 * Install git-tfs. You can use Chocolatey or download the binaries from the [releases page](https://github.com/git-tfs/git-tfs/releases)
-* As of writing of this post, version v0.29.0 is the current version. Note that I was not able to use this version as it was failing to load the TFS assemblies from my installation. I had to use v0.28.0.
+* As of writing of this post, version v0.29.0 is the current version. ~~Note that I was not able to use this version as it was failing to load the TFS assemblies from my installation. I had to use v0.28.0.~~
+  * Update - V0.29.0 worked for me when I unblocked all the files by using following powershell
+<pre class="brush: ps">
+gci c:\lpains\git-tfs | Unblock-File
+</pre>
 * Since I downloaded the binaries and dropped them in an arbitrary folder, I had to add git-tfs folder to my path variable.
 
 <pre class="brush: ps">
