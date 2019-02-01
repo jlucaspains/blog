@@ -43,7 +43,7 @@ The build pipeline is the heart of this post. I'm assuming you are familiar with
 
 5. Modify the info.plist file (optional)
    1. I use this to change app bundle id, icon sets for QA and PRD environments and finally set the app build number.
-   2. To use the BuildNumber in the app version, you will need to set the Build Number Format to `$(date:yyyy.MM)$(rev:.r)`. This exp
+   2. To use the BuildNumber in the app version, you will need to set the Build Number Format to `$(date:yyyy.MM)$(rev:.r)`.
    3. You may add or remove steps in the bash script below (provided for easy copy/paste)
 
 ![Modify info.plist]({{ site.url }}/images/posts/iOSAzureDevOpsBuildInfoPlist.png)
@@ -82,7 +82,7 @@ export INFO="$BUILD_SOURCESDIRECTORY/Path/To/Info.plist"
    3. Provide `$(APPLE_CERTIFICATE_SIGNING_IDENTITY)` in Signing Identity. This is an automatic variable output from the Install Certificate step
    4. Provide `$(APPLE_PROV_PROFILE_UUID)` in the Provisioning Profile UUID. This is an automatic variable output from the Install Provisioning Profile step
 
-![Build Project]({{ site.url }}/images/posts/iOSAzureDevOpsBuildNugetRestore.png)
+![Build Project]({{ site.url }}/images/posts/iOSAzureDevOpsBuildBuild.png)
 
 9. Copy the .ipa to staging
 
