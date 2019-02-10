@@ -5,8 +5,10 @@ author: Lucas Pains
 url: http://lpains.net
 title: Pains
 subtitle: of a geek
+description: A blog about all the pains (name pun intended) faced by a geek while trying to conquer the word building software.
 email_md5: 0ce5a3e31c584a3c81fa6a458810f2be
 subscribe_rss: http://lpains.net/atom.xml
+url: http://lpains.net/
 
 # accounts
 stackoverflow_user: LPains
@@ -42,3 +44,4 @@ gems:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-seo-tag

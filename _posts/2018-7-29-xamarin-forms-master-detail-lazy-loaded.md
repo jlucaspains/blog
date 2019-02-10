@@ -5,6 +5,7 @@ date: 2018-7-29
 comments: true
 sharing: true
 categories: [xamarin-forms, util]
+description: Custom implementation of a lazy loaded master/detail page for FreshMVVM framework. Working coding sample included.
 ---
 
 Out of the box, FreshMVVM offers a Master/Detail page navigation container that works nicely. However, it does not support lazy loading the pages as you navigate to them. Below, I demonstrate how I've done it.

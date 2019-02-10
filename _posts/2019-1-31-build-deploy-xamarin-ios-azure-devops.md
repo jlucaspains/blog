@@ -5,11 +5,12 @@ date: 2019-1-31
 comments: true
 sharing: true
 categories: [xamarin-iOS]
+description: Everybody knows how hard it is to work with iOS apps from a windows environment (mostly). I've had to deal with it and here is my experience building and deploying iOS app from a build/release pipeline in Azure DevOps.
 ---
 
-The goal here is to build an Xamarin.iOS app from a git repository, create a releasable .ipa file and push it to the App Store Connect for Test Flight.
+The goal here is to build a Xamarin.iOS app from a git repository, create a releasable .ipa file and push it to the App Store Connect for Test Flight.
 
-## Requirements
+## What you will need
 * A paid [apple developer account](https://developer.apple.com/)
 * Working Xamarin.iOS project in a Source Control system that Azure DevOps can access
    * If you need a sample application, you can grab one [here](https://github.com/jlucaspains/BlogSamples/tree/master/Xamarin/LPains.LazyLoadedMasterDetailPage)
