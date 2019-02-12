@@ -47,34 +47,7 @@ By using above relations, one can expand all permissions a user has.
 
 I'm not going to go too deep in code detailing now cus that's the objective of next post. However, check below examples on how you actually check for permissions in this resource-based authorization.
 
-<pre class="brush: csharp">
-public void DoSomething()
-{
-  // explicit access checking
-  // HasRead is an extension method for UserPrincipal class
-  if(User.HasRead("App.ResourceName") 
-  {
-    // do something if user has read access to App.Resource1
-  }
-}
-
-// maybe some action decorator for asp.net web api or mvc
-// by extending the authorize attribute, this method is never 
-// called if user doesn't have proper access
-[ResourceAuthorize("App.ResourceName", Action.Read)]
-public IEnumerable&lt;Item> GetAllItems()
-{
-  return new List&lt;Item>();
-}
-
-// requires write permission
-[ResourceAuthorize("App.ResourceName", Action.Write)]
-public void SaveItem(Item item)
-{
-   _uow.Save(item);
-}
-
-</pre>
+<script src="https://gist.github.com/jlucaspains/c27e3be8d71804c5cc657ab3d0dab730.js"></script>
 
 Note that in above examples, there is no check for a role, only whether the current user has ''Read'' access to resource ''App.ResourceName''. Roles are only a means to facilitate grouping users with similar access.
 

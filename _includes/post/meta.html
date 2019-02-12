@@ -1,28 +1,30 @@
 {% if post %}
-    {% assign categories = post.categories %}
-  {% else %}
-    {% assign categories = page.categories %}
-  {% endif %}
+{% assign categories = post.categories %}
+{% else %}
+{% assign categories = page.categories %}
+{% endif %}
 {% capture has_categories %}{{categories | size}}{% endcapture %}
 {% capture date %}{{ page.date }}{{ post.date }}{% endcapture %}
 {% capture has_date %}{{ date | size }}{% endcapture %}
 
 {% if has_date != '0' or has_categories != '0' %}
-	<div class="meta">
-		{% if has_date != '0' %}
-  			<span class="date"><time datetime="{{ date | datetime | date_to_xmlschema }}" {% if updated %}data-updated="true"{% endif %} 			itemprop="datePublished">{{ date | date: "%B %e, %Y" }}</time></span>
-		{% endif %}
+<div class="meta">
+	{% if has_date != '0' %}
+	<span class="date">
+		<i class="fas fa-calendar-day"></i>
+		<time datetime="{{ date | datetime | date_to_xmlschema }}" {% if updated %}data-updated="true" {% endif %} itemprop="datePublished">{{ date | date: "%B %e, %Y" }}</time></span>
+	{% endif %}
 
-		{% if has_date != '0' and  has_categories != '0' %}
-			<span> | </span>
-		{% endif %}
-		{% if categories %}
-			<span class="tags">
-				{% for tag in categories %}
-					 <a href="{{ root_url }}/categories/#{{ tag|slugize }}" class="post-tag">{{ tag }}</a>
-					 {% unless forloop.last %}&nbsp;{% endunless %}
-				{% endfor %}
-			</span>
-		{% endif %}
-	</div>
+	{% if has_date != '0' and has_categories != '0' %}
+	<span> | </span>
+	{% endif %}
+	{% if categories %}
+	<span class="tags">
+		{% for tag in categories %}
+		<a href="{{ root_url }}/categories/#{{ tag|slugize }}" class="post-tag"><i class="fas fa-tag"></i> {{ tag }}</a>
+		{% unless forloop.last %}&nbsp;{% endunless %}
+		{% endfor %}
+	</span>
+	{% endif %}
+</div>
 {% endif %}

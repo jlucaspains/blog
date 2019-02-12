@@ -50,24 +50,7 @@ The build pipeline is the heart of this post. I'm assuming you are familiar with
 
 ![Modify info.plist]({{ site.url }}/images/posts/iOSAzureDevOpsBuildInfoPlist.png)
 
-<pre class="brush: bash">
-#!/bin/bash
-echo "setting plist"
-
-echo "setting CFBundleVersion to $(Build.BuildNumber)"
-echo "setting CFBundleDisplayName to AppName"
-echo "setting CFBundleIdentifier to com.Company.AppName" 
-
-export INFO="$BUILD_SOURCESDIRECTORY/Path/To/Info.plist"
-
-/usr/libexec/PlistBuddy -c "set :CFBundleVersion $(Build.BuildNumber)" $INFO
-/usr/libexec/PlistBuddy -c "set :CFBundleDisplayName AppName" $INFO
-/usr/libexec/PlistBuddy -c "set :CFBundleIdentifier com.Company.AppName" $INFO
-/usr/libexec/PlistBuddy -c "set :XSAppIconAssets AppIcons_PRD.xcassets/AppIcons_PRD.appiconset" $INFO
-/usr/libexec/PlistBuddy -c "set :XSLaunchImageAssets AppIcons_PRD.xcassets/LaunchImages_PRD.launchimage" $INFO
-/usr/libexec/PlistBuddy -x -c "Print" $INFO
-</pre>
-
+<script src="https://gist.github.com/jlucaspains/95b366b36bc1f7c229025103c15eeb89.js"></script>
 
 6. Install the version of nuget your project needs
 
@@ -87,7 +70,7 @@ export INFO="$BUILD_SOURCESDIRECTORY/Path/To/Info.plist"
 
 9. Copy the .ipa to staging
 
-![Copy Fiels to Staging]({{ site.url }}/images/posts/iOSAzureDevOpsBuildCopyFiles.png)
+![Copy Fields to Staging]({{ site.url }}/images/posts/iOSAzureDevOpsBuildCopyFiles.png)
 
 10. Publish Artifacts 
 
@@ -104,5 +87,5 @@ The release will look like something like this:
 ![Release]({{ site.url }}/images/posts/iOSAzureDevOpsRelease.png)
 
 ## Special considerations
-1. Note that both nuget restore and xamarin build were executed over the .csproj file instead of the solution. I'm not sure why, but everytime I use the .sln the build fails.
+1. Note that both nuget restore and xamarin build were executed over the .csproj file instead of the solution. I'm not sure why, but every time I use the .sln the build fails.
 2. Apple store require you to provide export compliance documentation and will not automatically publish the app for testing without this. There are ways around this. [Read about it](https://help.apple.com/app-store-connect/#/dev88f5c7bf9).

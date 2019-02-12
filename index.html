@@ -12,11 +12,14 @@ layout: default
 {% endfor %}
 </div>
 <nav id="pagenavi">
-    {% if paginator.previous_page %}
-        <a href="{{paginator.previous_page}}" class="prev">Prev</a>
+    {% if paginator.previous_page == 1 %}
+        <a href="/" class="prev"><i class="fas fa-arrow-left"></i> Prev</a>
+    {% endif %}
+    {% if paginator.previous_page > 1 %}
+        <a href="/{{paginator.previous_page}}" class="prev"><i class="fas fa-arrow-left"></i> Prev</a>
     {% endif %}
     {% if paginator.next_page %}
-        <a href="{{paginator.next_page}}" class="next">Next</a>
+        <a href="/{{paginator.next_page}}" class="next">Next <i class="fas fa-arrow-right"></i></a>
     {% endif %}
     <div class="center"><a href="{{ root_url }}/archives">Blog Archives</a></div>
 </nav>

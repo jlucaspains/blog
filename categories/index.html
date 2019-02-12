@@ -7,14 +7,20 @@ title: categories
   <h1 class="title">categories</h1>
   <div class="entry-content">
     <div itemscope itemtype="http://schema.org/Blog">
-        {% for category in site.categories %}
-            <section>
-                <h2>{{ category[0] | capitalize }}</h2>
-                {% for post in category[1] %}
-                    <h3 itemprop="name"><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a> <div class="meta" style="display: inline;"><span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.date | date_to_string }}</time></span></div></h3>
-                {% endfor %}
-            </section>
-        {% endfor %}
+      {% for category in site.categories %}
+      <section>
+        <h2 class="year">{{ category[0] }}</h2>
+        <ul>
+          {% for post in category[1] %}
+          <li>
+            <a href="{{ root_url }}{{ post.url }}">{{post.title}}</a>
+            <div class="meta" style="display: inline;"><span class="date"><time datetime="{{ post.date }}" itemprop="datePublished">{{
+                  post.date | date_to_string }}</time></span></div>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endfor %}
     </div>
   </div>
 </article>

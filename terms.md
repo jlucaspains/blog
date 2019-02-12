@@ -6,7 +6,7 @@ sharing: false
 ---
 
 ## Privacy
-Long story short, this blog does not collect any data about you. However, it does use [google analytics](https://analytics.google.com/) and [disqus](https://disqus.com/) which may collect some information about you. Please verify [google's](http://www.google.com/analytics/learn/privacy.html) and [disqus'](https://help.disqus.com/customer/portal/articles/466259-privacy-policy) privacy policies.
+Long story short, this blog does not collect any data about you. However, it does use [google analytics](https://analytics.google.com/) which may collect some information about you. Please verify [google's](http://www.google.com/analytics/learn/privacy.html) privacy policies.
 
 ## Licenses
 This blog content is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). 

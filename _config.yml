@@ -10,10 +10,7 @@ email_md5: 0ce5a3e31c584a3c81fa6a458810f2be
 subscribe_rss: http://lpains.net/atom.xml
 url: http://lpains.net/
 
-# accounts
-stackoverflow_user: LPains
-stackoverflow_user_id: 1462485
-
+# social
 github_user: jlucaspains
 github_repo_url: https://github.com/jlucaspains/blog/
 
@@ -22,12 +19,11 @@ twitter_tweet_count: 5
 twitter_show_replies: false
 twitter_tweet_button: true
 
-disqus_short_name: painsblog
-disqus_show_comment_count: true
-
 linkedin_user: lucaspains
 
 google_analytics_tracking_id: UA-44645930-2
+
+addthis_profile_id: ra-5c60c593dcb02fe9
 
 kramdown:
   hard_wrap: false
@@ -35,12 +31,12 @@ kramdown:
 #
 # Jekyll Settings
 #
-permalink: /archive/:year/:month/:day/:title/
-paginate: 5
-paginate_path: "page/:num"
+permalink: /articles/:year/:title/
+paginate: 2
+paginate_path: "/:num/"
 category_dir: categories
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate

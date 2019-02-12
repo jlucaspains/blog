@@ -4,33 +4,36 @@
 	{% else %}
 	<script src="{{ root_url }}/javascripts/md5.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("{{ site.email | downcase }}") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		$(function () {
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("{{ site.email | downcase }}") +
+				"?s=160' alt='Profile Picture' style='width: 160px;' />");
 		});
 	</script>
 	{% endif %}
-	<h1><a href="/">{{ site.title }} <small>{{site.subtitle}}</small></a></h1>
+	<h1><a href="/">{{ site.title }}<br /><small>{{site.subtitle}}</small></a>
+	</h1>
 </div>
 <nav id="main-nav">{% include navigation.html %}</nav>
 <nav id="sub-nav">
 	<div class="social">
 		{% if site.email %}
-			<a class="email" href="mailto:{{ site.email }}" title="Email">Email</a>
+		<a class="email" href="mailto:{{ site.email }}" title="Email"><i class="fas fa-envelope"></i></a>
 		{% endif %}
 		{% if site.twitter_user %}
-			<a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter">Twitter</a>
+		<a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter"><i class="fab fa-twitter"></i></a>
 		{% endif %}
 		{% if site.github_user %}
-			<a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub">GitHub</a>
+		<a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub"><i class="fab fa-github"></i></a>
 		{% endif %}
 		{% if site.stackoverflow_user and site.stackoverflow_user_id %}
-		  <a class="stackoverflow" href="http://stackoverflow.com/users/{{site.stackoverflow_user_id}}/{{site.stackoverflow_user}}" title="StackOverflow"></a>
+		<a class="stackoverflow" href="http://stackoverflow.com/users/{{site.stackoverflow_user_id}}/{{site.stackoverflow_user}}"
+		 title="StackOverflow"><i class="fab fa-stack-overflow"></i></a>
 		{% endif %}
 		{% if site.linkedin_user %}
-			<a class="linkedin" href="http://www.linkedin.com/in/{{ site.linkedin_user }}" title="LinkedIn">LinkedIn</a>
+		<a class="linkedin" href="http://www.linkedin.com/in/{{ site.linkedin_user }}" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
 		{% endif %}
-    	{% if site.subscribe_rss %}
-			<a class="rss" href="{{ site.subscribe_rss }}" title="RSS">RSS</a>
+		{% if site.subscribe_rss %}
+		<a class="rss" href="{{ site.subscribe_rss }}" title="RSS"><i class="fas fa-rss"></i></a>
 		{% endif %}
 	</div>
 </nav>
