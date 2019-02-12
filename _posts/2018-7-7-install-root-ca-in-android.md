@@ -12,6 +12,7 @@ When developing a small Xamarin forms app I wanted the android emulator to conne
 First, you will need the CA certificate so android can trust the SSL cert. If you don't have the cert, you can export it using [Chrome on mac](https://stackoverflow.com/questions/25940396/how-to-export-certificate-from-chrome-on-a-mac) or Chrome on windows:
 
 ![Export Certificate]({{ site.url }}/images/posts/ExportCertificate.gif)
+*Exporting certificate using chrome*
 
 Next, push the .cer to the emulator using adb push command. Note that even though I'm pushing the cert to the sdcard it actually shows in a different location. I'm not sure why my emulator is doing that but I've seen others that work just fine. Just make sure to search in all folders when installing the cert in the emulator.
 
@@ -22,6 +23,7 @@ adb push path_to_cert\ca_cert_file.cer /sdcard/ca_cert_file.cer
 Before installing the certificate, you will need to enable device lockscreen security. Finally, install the certificate using Settings app:
 
 ![Import Certificate]({{ site.url }}/images/posts/ImportCertificateAndroid.gif)
+*Importing certificate to Android Emulator*
 
 After import, you can check your certs in User credentials under Encryption & credentials and more importantly, navigate to the SSL site without errors.
 

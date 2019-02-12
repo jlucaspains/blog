@@ -36,7 +36,8 @@ Usage:
 
 Here is how the app looks like on Android:
 
-![Install profile warning]({{ site.url }}/images/posts/XamarinAndroidLazyLoadedMasterDetail.png)
+![Lazy Loaded Master Detail example]({{ site.url }}/images/posts/XamarinAndroidLazyLoadedMasterDetail.png)
+*Running Lazy Loaded Master Detail example in Android emulator*
 
 And here is the [code](https://github.com/jlucaspains/BlogSamples/tree/master/Xamarin/LPains.LazyLoadedMasterDetailPage) for this post.
 

@@ -47,9 +47,8 @@ cd c:\lpains\Project
 git tfs clone https://tfs/tfs/DefaultCollection $/Project/Path/To/ParentBranch --branches=all
 ```
 
-This will take a while so...
-
 ![Coffe time]({{ site.url }}/images/posts/coffee-business-cat.jpg)
+*This is going to take a while so...*
 
 git-tfs suggests cleaning git-tfs metadata. This is optional but will leave you with a cleaner repository.
 

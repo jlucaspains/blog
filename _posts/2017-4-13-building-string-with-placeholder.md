@@ -15,7 +15,7 @@ Kudos to Scott Hanselman for [this solution](http://www.hanselman.com/blog/Perma
 
 The nice part about this solution is that it won't throw any exceptions if it can't correctly build the string. It will just leave the bad part of the template in the result. Also, it supports Format Providers which also allows for specific culture targeting:
 
-<script src="https://gist.github.com/jlucaspains/79a72598b13a37b84166a21b430cc813.js"></script>s
+<script src="https://gist.github.com/jlucaspains/79a72598b13a37b84166a21b430cc813.js"></script>
 
 You can find the code in [Scott's git hub repo](https://github.com/shanselman/ObjectToString/blob/master/ObjectToString/ObjectToString.cs)
 

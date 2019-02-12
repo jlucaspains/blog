@@ -39,6 +39,7 @@ Normally, a claim is issued by a Security Token Service (STS), in this example I
 Start with creating yourself a brand new ASP.Net 4.5.2 web application, ensure to use the MVC template and select Windows Authentication for Authentication.
 
 ![New ASP.Net Web App]({{ site.url }}/images/posts/NewAspNetWebApp.png)
+*Creating a new asp.net 4.5.2 project*
 
 If you already have a web application, change the following in the web.config:
 
