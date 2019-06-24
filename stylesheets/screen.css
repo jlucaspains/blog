@@ -1032,3 +1032,7 @@ dd {
     -moz-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out
 }
+
+.gist {
+    margin-top: 25px;
+}
