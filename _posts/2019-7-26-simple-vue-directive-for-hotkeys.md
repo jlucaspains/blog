@@ -5,7 +5,7 @@ date: 2019-7-26
 comments: true
 sharing: true
 categories: [typescript, vue]
-description: 
+description: vue-mouseless is a tiny Vue directive for hotkey handling using mousetrap.
 ---
 
 I'm a fan of hotkeys and I use them for a lot of things. In fact, I believe that 80% of the commands I use in my IDEs (Visual Studio and Visual Studio Code mostly) I use via hotkeys. Nothing is better than ``CTRL + p`` in VS Code or ``CTRL + k + d`` in VS. Anyway, while a lot of users really don't care about that, those that have data entry intensive use cases will probably appreciate some forethought in hotkeys in the apps they use.

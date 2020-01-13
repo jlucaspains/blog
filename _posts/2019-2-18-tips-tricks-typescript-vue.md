@@ -5,7 +5,7 @@ date: 2019-6-23
 comments: true
 sharing: true
 categories: [typescript, vue]
-description: 
+description: My top 5 Vue tips and tricks for an easier and faster development experience
 ---
 
 I've been working on a vue project with typescript for almost a year now. Along the way, we found a few little things that I would like to share. Everything shown here is buried in vue's documentation somewhere, you may need to dig a little, but it is all there.

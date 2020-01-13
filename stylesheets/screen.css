@@ -10,8 +10,8 @@ html {
 body {
     height: 100%;
     color: #333;
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     font-size: 13px;
     background: #0063B1
 }
@@ -97,7 +97,7 @@ a {
 #header {
     height: 30px;
     padding: 30px 0;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     line-height: 30px
 }
 
@@ -122,7 +122,7 @@ a {
 }
 
 #header h1 {
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 4em;
     line-height: 0.9;
@@ -150,13 +150,13 @@ a {
 }
 
 #header h2 {
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 400
 }
 
 #main-nav {
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     float: left;
     margin-left: 30px
 }
@@ -240,17 +240,6 @@ a {
     margin-right: 15px
 }
 
-@media screen and (max-width:1040px) {
-    #sub-nav .social {
-        float: none;
-        margin-right: 0
-    }
-
-    #sub-nav .social a:last-of-type {
-        margin-right: 0
-    }
-}
-
 #sub-nav .social a {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -274,6 +263,16 @@ a {
     -o-transition: 0.3s;
     transition: 0.3s;
     font-size: 2rem;
+}
+#sub-nav .social a:last-of-type {
+    margin-right: 0
+}
+
+@media screen and (max-width:1040px) {
+    #sub-nav .social {
+        float: none;
+        margin-right: 0
+    }
 }
 
 #pagenavi {
@@ -414,7 +413,7 @@ article .entry-content p {
 
 article .entry-content h2 {
     font-weight: 300;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     position: relative
 }
 
@@ -448,41 +447,41 @@ article .entry-content blockquote>p:first-of-type {
     margin-top: 0
 }
 
-article .entry-content iframe {
+/* article .entry-content iframe {
     border: none
-}
+} */
 
-article .entry-content table {
+/* article .entry-content table {
     background: #fff;
     border: 1px solid #ccc;
     border-spacing: 0;
     border-collapse: collapse;
     margin-top: 10px
-}
+} */
 
-article .entry-content h2+h3 {
+/* article .entry-content h2+h3 {
     margin-top: 30px;
     font-size: 22px
-}
+} */
 
-article .entry-content table td,
+/* article .entry-content table td,
 article .entry-content table th {
     font-family: helvetica, arial, san-serif;
     padding: 6px 10px;
     border: solid 1px #999;
     margin: 0
-}
-
+} */
+/* 
 article .entry-content table th {
     background: #ddd;
     padding: 0 15px
-}
+} */
 
-article .entry-content table tr:nth-of-type(2n) {
+/* article .entry-content table tr:nth-of-type(2n) {
     background: #f9f9f9
-}
+} */
 
-article .entry-content .video-container {
+/* article .entry-content .video-container {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 30px;
@@ -499,7 +498,7 @@ article .entry-content .video-container embed {
     width: 100%;
     height: 100%;
     margin-top: 0
-}
+} */
 
 .share {
     padding: 15px 0;
@@ -560,12 +559,12 @@ article .entry-content .video-container embed {
         *vertical-align: auto;
         zoom: 1;
         *display: inline;
-        margin-right: 30px
+        /* margin-right: 30px */
     }
 }
-
+/* 
 #content article .entry-content .archives {
-    font-family: "Open Sans"
+    font-family: 'Open Sans', sans-serif;
 }
 
 #content article .entry-content .archives .year {
@@ -592,8 +591,8 @@ article .entry-content .video-container embed {
 #content article .entry-content .archives ul li div.meta span.date,
 #content article .entry-content .archives ul li div.meta span.edit {
     display: none
-}
-
+} */
+/* 
 #comment {
     padding: 30px 0;
     border-top: 1px solid #fff;
@@ -605,7 +604,7 @@ article .entry-content .video-container embed {
     font-weight: 300;
     line-height: 35px;
     margin-bottom: 20px
-}
+} */
 
 footer {
     border-top: 1px solid #fff;
@@ -630,11 +629,11 @@ h2 {
     height: auto;
     border-bottom: none
 }
-
+/* 
 #header .subtitle {
     color: #999;
     font-style: italic
-}
+} */
 
 #header #sub-nav {
     float: none;
@@ -684,14 +683,14 @@ ul li a {
     width: 77%;
     background: #fff
 }
-
+/* 
 .container .mid-col #banner {
     width: 100%
 }
 
 .container .mid-col #banner small {
     margin-right: 70px
-}
+} */
 
 .container .mid-col footer.inner {
     text-align: center;
@@ -700,7 +699,7 @@ ul li a {
 }
 
 .container .mid-col .mid-col-container {
-    padding: 0 70px 0 100px
+    padding: 0 70px 0 70px
 }
 
 #content {
@@ -718,11 +717,11 @@ ul li a {
     font-weight: 800;
     line-height: 1em
 }
-
+/* 
 #content article.single-post .title {
     text-align: center;
     text-decoration: underline
-}
+} */
 
 #content article .entry-content {
     margin-left: 0;
@@ -733,18 +732,18 @@ ul li a {
 #content article .entry-content p {
     margin-top: 30px
 }
-
+/* 
 #content article .entry-content .github-widget p {
     margin-top: 0
-}
+} */
 
-#content article .entry-content .more-link:before {
+/* #content article .entry-content .more-link:before {
     line-height: 1.2em
 }
 
 #content article .entry-content .more-link {
     padding-left: 0
-}
+} */
 
 #content article .entry-content h2 {
     font-size: 1.3em;
@@ -772,14 +771,14 @@ ul li a {
 #content article .entry-content table {
     line-height: 1.2em
 }
-
+/* 
 #content article .entry-content table td {
     text-align: left
-}
+} */
 
 #content article .meta {
     color: #999;
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     font-size: 1rem
 }
@@ -789,7 +788,7 @@ ul li a {
 }
 
 #content article h1.title {
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 5em;
     padding-bottom: 15px
@@ -803,9 +802,9 @@ ul li a {
     transition: color 0.3s
 }
 
-#content div.archives h1.title {
+/* #content div.archives h1.title {
     font-size: 3em
-}
+} */
 
 .container .mid-col footer {
     width: 100%
@@ -844,7 +843,7 @@ ul li a {
 .left-col #header #sub-nav .social {
     margin-bottom: 10px
 }
-
+/* 
 .archives .title {
     font-size: 1.2em
 }
@@ -852,7 +851,7 @@ ul li a {
 .archives article .meta {
     line-height: 1.5em;
     margin-top: 0
-}
+} */
 
 .archives article .meta span::before {
     padding-right: 0
@@ -893,7 +892,7 @@ ul li a {
 
     .left-col #header #main-nav ul li {
         display: inline;
-        margin-right: 10px
+        margin-right: 30px
     }
 
     .container .mid-col {
@@ -919,19 +918,22 @@ ul li a {
         font-size: 2em;
         overflow: hidden
     }
-
+/* 
     #content article .meta span {
         display: block;
         font-size: 0.9em
+    } */
+    #content article .meta span {
+        display: inline;
     }
 
     #content article .meta span.edit {
         display: none
     }
 
-    #content article .meta span.comments {
+    /* #content article .meta span.comments {
         display: none
-    }
+    } */
 
     #content article h1.title {
         overflow: hidden
@@ -945,25 +947,25 @@ ul li a {
         font-size: 1.3em
     }
 }
-
+/* 
 #feedburner-count {
     position: absolute;
     top: 0;
     right: 0;
     clip: rect(4px, 85px, 15px, 4px)
-}
+} */
 
-article table.matrix td,
+/* article table.matrix td,
 article table.matrix th {
     font-size: 0.7em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida', Arial, Verdana, sans-serif
-}
+} */
 
-article table.matrix pre.csharpcode {
+/* article table.matrix pre.csharpcode {
     border: none;
     font-size: 1.1em
-}
-
+} */
+/* 
 article table.matrix td {
     background-color: #fff
 }
@@ -973,12 +975,12 @@ article table.matrix th {
 }
 
 ul.categories {
-    font-family: "Open Sans"
+    font-family: 'Open Sans', sans-serif;
 }
 
 ul.categories span.size {
     font-size: 0.7em
-}
+} */
 
 a:hover {
     -webkit-transition: color 0.3s;
@@ -992,24 +994,24 @@ a:hover {
 .left-col a:hover {
     color: #4466c5
 }
-
+/* 
 #page-navigation {
     font-family: arial;
     width: 100%
-}
+} */
 
 #page-navigation div {
     display: inline-block
 }
-
+/* 
 #page-navigation div.next {
     float: right
-}
+} */
 
 dialog {
     font-size: 1.2em
 }
-
+/* 
 dt {
     text-transform: uppercase;
     text-align: left;
@@ -1018,7 +1020,7 @@ dt {
 
 dd {
     margin-left: 7.2em
-}
+} */
 
 .post-tag {
     display: inline-block;
