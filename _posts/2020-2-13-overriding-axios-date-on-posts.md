@@ -13,7 +13,7 @@ description: Working with date and time is very painful. This post demonstrates 
 
 Let's start by pointing out the obvious. It is painful to work with dates. No matter the technology, it is just harder than it should be. 
 
-Anyway... I stumbled accross one of those annoying date related issues with axios. Just to be fair, the problem is not necessarily an axios problem, I just got to it when using axios. By default, axios will use ``JSON.stringify`` to convert an object to a json. Nothing fancy here. The problem is that when a date object is sent to the server, it will be converted to UTC and one might not necessarily want that.
+Anyway... I stumbled across one of those annoying date related issues with axios. Just to be fair, the problem is not necessarily an axios problem, I just got to it when using axios. By default, axios will use ``JSON.stringify`` to convert an object to a json. Nothing fancy here. The problem is that when a date object is sent to the server, it will be converted to UTC and one might not necessarily want that.
 
 In reading axios documentation, the recommendation was to provide the [``transformRequest``](https://github.com/axios/axios/tree/a11cdf468303a365a6dc6e84f6dd0e4b3b8fd336#request-config) which allows for complete control of the serialization. While that would certainly work, it is a lot of work to just to handle dates in a different way.
 
