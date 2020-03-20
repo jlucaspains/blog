@@ -4,7 +4,7 @@ title: "Xamarin Forms converting from one timezone to another"
 date: 2020-03-16
 comments: true
 sharing: true
-categories: [util]
+categories: [xamarin, util]
 description: Yet another post about date and time. Need to convert a date from a specific time zone in Xamarin Forms? No problem, this post will show you exactly how.
 ---
 
