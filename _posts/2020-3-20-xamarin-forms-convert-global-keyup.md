@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Xamarin Forms Handle Android Key Up event"
-date: 2020-03-23
+date: 2020-03-20
 comments: true
 sharing: true
 categories: [xamarin]
