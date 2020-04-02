@@ -22,12 +22,15 @@ First, ensure you have a solid branching strategy. I'm quite fond of [git flow](
 I really recommend you use PR policies to ensure that everyone is doing the same. This is what I recommend for most projects:
 
 * Require a minimum number of reviewers:
+
 ![PR_number_reviewers.png]({{site.baseurl}}/images/posts/PR_number_reviewers.png)
 
 * Check for linked work items. This is key to ensure that release notes are generated
+
 ![PR_workitem.png]({{site.baseurl}}/images/posts/PR_workitem.png)
 
 * Check for comment resolution
+
 ![PR_comments.png]({{site.baseurl}}/images/posts/PR_comments.png)
 
 * Merge Type
@@ -36,6 +39,7 @@ I really recommend you use PR policies to ensure that everyone is doing the same
 ![PR_merge_type.png]({{site.baseurl}}/images/posts/PR_merge_type.png)
 
 * Build
+
 ![PR_build.png]({{site.baseurl}}/images/posts/PR_build.png)
 
 ## Build
