@@ -2,7 +2,7 @@
 published: false
 layout: post
 title: Automatic release notes on Azure DevOps
-date: {}
+date: 2020-04-02T00:00:00.000Z
 comments: true
 sharing: true
 categories:
@@ -12,7 +12,7 @@ description: >-
   this post I will show you how to completely forget about it and still get
   great release notes.
 ---
-If you are neck deep into DevOps using Azure DevOps, chances are that you have your code on a git repository, have PBIs or Stories, are using Pull requests, Builds, and releases. If you are doing all of this good stuff, great! Carry on and I will show you how to get that shiny cherry on top of your cake. If you are not, you can probably benefit of this post too, but you will have to figure out how to do the same using the tools you love.
+If you are neck deep into DevOps using Azure DevOps, chances are that you have your code on a git repository, have PBIs or Stories, are using Pull requests, Builds, and releases. If you are doing all of this good stuff, great! Carry on and I will show you how to get that shiny cherry on top of your cake. If you are not, you can probably benefit from this post too, but you will have to figure out how to do the same using the tools you love.
 
 What I want to do is to automatically generate a markdown file with all work items associated with this release. I also want to accumulate work between environments so work items will only show once on a particular environment.
 
