@@ -29,14 +29,33 @@ This works well because the agent creates proxy configuration variables that the
 
 The next issue you might find is that your proxy uses self-signed certificates (why? just somebody tell me why!). If this happens, you will get the ``self signed certificate in certificate chain`` error. This happens because your proxy is doing a man in the middle attach on you. Without going into the reasons this would be ok, your proxy is replacing the original cert served to you with a cert of its own. To get rid of this error, you should trust your proxy's cert to let it do its thing.
 
-First, export the cert root CA into a .cer or .pem file:
+First, export the cert root CA into a .cer or .pem file. Ensure you select Base 64 instead of DER encoding (I was lazy and reused an old gif from [Install Root CA cert in Android emulator]({{ site.baseurl }}{% link _posts/2018-7-7-install-root-ca-in-android.md %})):
 
-image
+![Export Certificate]({{site.baseurl}}/images/posts/ExportCertificate.gif)
 
 Save the cert file to your build server and set a variable ``NODE_EXTRA_CA_CERTS`` to point to it.
 
 ```
-setx NODE_EXTRA_CA_CERTS "c:\AzureDevOpsAgent\ProxyCACert.pem"
+setx NODE_EXTRA_CA_CERTS "c:\AzureDevOpsAgent\ProxyCACert.cer"
 ```
 
-Setting this almost magic environment variable fixed issues with nuget, npm, and git. There might be other task types that are not covered, but the basics should be covered.
+If you need to install several CA certificates, you can concatenate the content of the files together and change the file extension to ``.pem`` and changing you ``NODE_EXTRA_CA_CERTS`` export. Example of the ``.pem`` file:
+
+```
+BEGIN CERTIFICATE
+base 64 encoded cert
+END CERTIFICATE
+
+BEGIN CERTIFICATE
+base 64 encoded cert
+END CERTIFICATE
+
+BEGIN CERTIFICATE
+base 64 encoded cert
+END CERTIFICATE
+```
+
+Setting this environment variable fixed issues with nuget, npm, and git. There might be other task types that are not covered, but the basics should be.
+
+Cheers,
+Lucas
