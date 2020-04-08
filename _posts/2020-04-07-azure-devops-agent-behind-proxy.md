@@ -1,8 +1,7 @@
 ---
-published: false
 title: Setting up an Azure DevOps agent behind a proxy with self-signed certificate.
 layout: post
-date: 2020-04-03T00:00:00.000Z
+date: 2020-04-07
 comments: true
 sharing: true
 categories:
@@ -12,6 +11,7 @@ description: >-
   behind a proxy that replaces cert with a self-signed certificate is. This post
   will show you how to configure an agent with this extra complication.
 ---
+
 In case you can't or don't want to use the Microsoft hosted agents (why?), setting up your own build servers is not too hard. Of course, I hope you don't have to deal with a proxy server. In the unlikely scenario that you have a proxy server, I honestly hope you don't have one with a self-signed certificate. Now, if you have to deal with all of this, I feel you. I put some notes together on how to get this setup done and have builds and releases running on your own agents flawlessly.
 
 ## Setting up DevOps agent behind a proxy
@@ -25,7 +25,7 @@ This works well because the agent creates proxy configuration variables that the
 
 ## Fixing the self-signed certificate error
 
-![SelfSignedCertificateInChain.png]({{site.baseurl}}/images/posts/SelfSignedCertificateInChain.png)
+![Self Signed Certificate In Chain]({{site.baseurl}}/images/posts/SelfSignedCertificateInChain.png)
 
 The next issue you might find is that your proxy uses self-signed certificates (why? just somebody tell me why!). If this happens, you will get the ``self signed certificate in certificate chain`` error. This happens because your proxy is doing a man in the middle attach on you. Without going into the reasons this would be ok, your proxy is replacing the original cert served to you with a cert of its own. To get rid of this error, you should trust your proxy's cert to let it do its thing.
 
@@ -39,7 +39,7 @@ Save the cert file to your build server and set a variable ``NODE_EXTRA_CA_CERTS
 setx NODE_EXTRA_CA_CERTS "c:\AzureDevOpsAgent\ProxyCACert.cer"
 ```
 
-If you need to install several CA certificates, you can concatenate the content of the files together and change the file extension to ``.pem`` and changing you ``NODE_EXTRA_CA_CERTS`` export. Example of the ``.pem`` file:
+If you need to install several CA certificates, you can concatenate the content of the files together and change the file extension to ``.pem`` and changing your ``NODE_EXTRA_CA_CERTS`` export. Example of the ``.pem`` file:
 
 ```
 BEGIN CERTIFICATE
