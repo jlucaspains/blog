@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Xamarin Forms Azure DevOps build/release for Enterprise apps"
-date: 2020-03-20
+title: Xamarin Forms Azure DevOps build/release for Enterprise apps
+date: 2020-04-19
 comments: true
 sharing: true
-categories: 
+categories:
   - DevOps
   - Xamarin
 description: >-
