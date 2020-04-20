@@ -10,6 +10,7 @@ description: >-
   Installing your own Azure DevOps is not too hard. Installing it when you are
   behind a proxy that replaces cert with a self-signed certificate is. This post
   will show you how to configure an agent with this extra complication.
+published: false
 ---
 
 In case you can't or don't want to use the Microsoft hosted agents (why?), setting up your own build servers is not too hard. Of course, I hope you don't have to deal with a proxy server. In the unlikely scenario that you have a proxy server, I honestly hope you don't have one with a self-signed certificate. Now, if you have to deal with all of this, I feel you. I put some notes together on how to get this setup done and have builds and releases running on your own agents flawlessly.
