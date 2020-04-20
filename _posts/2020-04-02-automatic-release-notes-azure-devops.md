@@ -12,12 +12,12 @@ description: >-
   great release notes.
 published: true
 ---
-If you are neck deep into DevOps using Azure DevOps, chances are that you have your code on a git repository, have PBIs or Stories, are using Pull requests, Builds, and releases. If you are doing all of this good stuff, great! Carry on and I will show you how to get that shiny cherry on top of your cake. If you are not, you can probably benefit from this post too, but you will have to figure out how to do the same using the tools you love.
+If you are neck-deep into DevOps using Azure DevOps, chances are that you have your code on a git repository, have PBIs or Stories, are using Pull requests, Builds, and releases. If you are doing all of this good stuff, great! Carry on and I will show you how to get that shiny cherry on top of your cake. If you are not, you can probably benefit from this post too, but you will have to figure out how to do the same using the tools you love.
 
 What I want to do is to automatically generate a markdown file with all work items associated with this release. I also want to accumulate work between environments so work items will only show once on a particular environment.
 
 ## PR
-First, ensure you have a solid branching strategy. I'm quite fond of [git flow](https://nvie.com/posts/a-successful-git-branching-model/) myself, but anything where you use a PR to merge your code will work fine.
+First, ensure you have a solid branching strategy. I'm quite fond of [git flow](https://nvie.com/posts/a-successful-git-branching-model/) myself, but anything that uses a PR will work fine.
 
 I really recommend you use PR policies to ensure that everyone is doing the same. This is what I recommend for most projects:
 
