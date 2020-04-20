@@ -1,18 +1,21 @@
 ---
 layout: post
-title: "Xamarin Forms Azure DevOps build/release for Enterprise apps"
-date: 2020-03-20
+title: Xamarin Forms Azure DevOps build/release for Enterprise apps
+date: {}
 comments: true
 sharing: true
-categories: 
+categories:
   - DevOps
   - Xamarin
 published: false
 description: >-
-  Having a reliable pipeline that builds your Xamarin Forms apps in multiple configurations is beautiful. In this post, I will show you how to create an yml pipeline to build your iOS and Android app and release it to your Enterprise users.  
+  Having a reliable pipeline that builds your Xamarin Forms apps in multiple
+  configurations is beautiful. In this post, I will show you how to create an
+  yml pipeline to build your iOS and Android app and release it to your
+  Enterprise users.
 ---
 
-![Build]({{ site.url }}/images/posts/build-lego.jpg)
+![Building blocks]({{ site.url }}/images/posts/build-lego.jpg)
 *Building Blocks - Photo by [Markus Spiske on Unsplash](https://unsplash.com/photos/C0koz3G1I4I)*
 
 In January last year, I wrote about [building and deploying Xamarin iOS apps using Azure DevOps]({{ site.baseurl }}{% link _posts/2019-1-31-build-deploy-xamarin-ios-azure-devops.md %})). I wanted to write about the Android process but never mustered the energy to do it. Nevertheless, today is the day I will.
