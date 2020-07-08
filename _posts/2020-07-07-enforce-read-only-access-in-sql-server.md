@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Enforce read only access in SQL Server queries
 date: 2020-04-19T00:00:00.000Z
