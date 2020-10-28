@@ -252,10 +252,8 @@ a {
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
-    /* text-indent: -9999px; */
     margin: 0 15px 15px 0;
     padding: 5px;
-    /* opacity: 0.5; */
     width: 40px;
     height: 40px;
     -webkit-transition: 0.3s;
@@ -447,59 +445,6 @@ article .entry-content blockquote>p:first-of-type {
     margin-top: 0
 }
 
-/* article .entry-content iframe {
-    border: none
-} */
-
-/* article .entry-content table {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin-top: 10px
-} */
-
-/* article .entry-content h2+h3 {
-    margin-top: 30px;
-    font-size: 22px
-} */
-
-/* article .entry-content table td,
-article .entry-content table th {
-    font-family: helvetica, arial, san-serif;
-    padding: 6px 10px;
-    border: solid 1px #999;
-    margin: 0
-} */
-/* 
-article .entry-content table th {
-    background: #ddd;
-    padding: 0 15px
-} */
-
-/* article .entry-content table tr:nth-of-type(2n) {
-    background: #f9f9f9
-} */
-
-/* article .entry-content .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden
-}
-
-article .entry-content .video-container iframe,
-article .entry-content .video-container object,
-article .entry-content .video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin-top: 0
-} */
-
 .share {
     padding: 15px 0;
     border-top: 1px solid #fff;
@@ -559,52 +504,8 @@ article .entry-content .video-container embed {
         *vertical-align: auto;
         zoom: 1;
         *display: inline;
-        /* margin-right: 30px */
     }
 }
-/* 
-#content article .entry-content .archives {
-    font-family: 'Open Sans', sans-serif;
-}
-
-#content article .entry-content .archives .year {
-    font-size: 1.1em
-}
-
-#content article .entry-content .archives h3.title {
-    display: inline-block;
-    font-size: 0.9em;
-    font-weight: 400
-}
-
-#content article .entry-content .archives ul {
-    padding: 20px;
-    margin-left: 30px
-}
-
-#content article .entry-content .archives ul li div.meta {
-    display: inline-block;
-    font-size: 0.6em;
-    font-weight: 300
-}
-
-#content article .entry-content .archives ul li div.meta span.date,
-#content article .entry-content .archives ul li div.meta span.edit {
-    display: none
-} */
-/* 
-#comment {
-    padding: 30px 0;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd
-}
-
-#comment h1.title {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 35px;
-    margin-bottom: 20px
-} */
 
 footer {
     border-top: 1px solid #fff;
@@ -629,11 +530,6 @@ h2 {
     height: auto;
     border-bottom: none
 }
-/* 
-#header .subtitle {
-    color: #999;
-    font-style: italic
-} */
 
 #header #sub-nav {
     float: none;
@@ -683,14 +579,6 @@ ul li a {
     width: 77%;
     background: #fff
 }
-/* 
-.container .mid-col #banner {
-    width: 100%
-}
-
-.container .mid-col #banner small {
-    margin-right: 70px
-} */
 
 .container .mid-col footer.inner {
     text-align: center;
@@ -717,11 +605,6 @@ ul li a {
     font-weight: 800;
     line-height: 1em
 }
-/* 
-#content article.single-post .title {
-    text-align: center;
-    text-decoration: underline
-} */
 
 #content article .entry-content {
     margin-left: 0;
@@ -732,18 +615,6 @@ ul li a {
 #content article .entry-content p {
     margin-top: 30px
 }
-/* 
-#content article .entry-content .github-widget p {
-    margin-top: 0
-} */
-
-/* #content article .entry-content .more-link:before {
-    line-height: 1.2em
-}
-
-#content article .entry-content .more-link {
-    padding-left: 0
-} */
 
 #content article .entry-content h2 {
     font-size: 1.3em;
@@ -771,10 +642,6 @@ ul li a {
 #content article .entry-content table {
     line-height: 1.2em
 }
-/* 
-#content article .entry-content table td {
-    text-align: left
-} */
 
 #content article .meta {
     color: #999;
@@ -800,10 +667,6 @@ ul li a {
     -o-transition: color 0.3s;
     transition: color 0.3s
 }
-
-/* #content div.archives h1.title {
-    font-size: 3em
-} */
 
 .container .mid-col footer {
     width: 100%
@@ -842,15 +705,6 @@ ul li a {
 .left-col #header #sub-nav .social {
     margin-bottom: 10px
 }
-/* 
-.archives .title {
-    font-size: 1.2em
-}
-
-.archives article .meta {
-    line-height: 1.5em;
-    margin-top: 0
-} */
 
 .archives article .meta span::before {
     padding-right: 0
@@ -917,11 +771,6 @@ ul li a {
         font-size: 2em;
         overflow: hidden
     }
-/* 
-    #content article .meta span {
-        display: block;
-        font-size: 0.9em
-    } */
     #content article .meta span {
         display: inline;
     }
@@ -929,10 +778,6 @@ ul li a {
     #content article .meta span.edit {
         display: none
     }
-
-    /* #content article .meta span.comments {
-        display: none
-    } */
 
     #content article h1.title {
         overflow: hidden
@@ -946,40 +791,6 @@ ul li a {
         font-size: 1.3em
     }
 }
-/* 
-#feedburner-count {
-    position: absolute;
-    top: 0;
-    right: 0;
-    clip: rect(4px, 85px, 15px, 4px)
-} */
-
-/* article table.matrix td,
-article table.matrix th {
-    font-size: 0.7em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida', Arial, Verdana, sans-serif
-} */
-
-/* article table.matrix pre.csharpcode {
-    border: none;
-    font-size: 1.1em
-} */
-/* 
-article table.matrix td {
-    background-color: #fff
-}
-
-article table.matrix th {
-    background-color: #ffd
-}
-
-ul.categories {
-    font-family: 'Open Sans', sans-serif;
-}
-
-ul.categories span.size {
-    font-size: 0.7em
-} */
 
 a:hover {
     -webkit-transition: color 0.3s;
@@ -993,34 +804,12 @@ a:hover {
 .left-col a:hover {
     color: #4466c5
 }
-/* 
-#page-navigation {
-    font-family: arial;
-    width: 100%
-} */
-
 #page-navigation div {
     display: inline-block
 }
-/* 
-#page-navigation div.next {
-    float: right
-} */
-
 dialog {
     font-size: 1.2em
 }
-/* 
-dt {
-    text-transform: uppercase;
-    text-align: left;
-    margin-top: 1.6em
-}
-
-dd {
-    margin-left: 7.2em
-} */
-
 .post-tag {
     display: inline-block;
     padding: .5rem;
