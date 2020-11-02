@@ -5,7 +5,7 @@ date: 2020-11-01T00:00:00.000Z
 comments: true
 sharing: true
 categories:
-  - DevOps
+  - xamarin-forms
 description: >-
   Two way binding on Collection Views has a small quirk that is not immediately obvious. In this post, I will show you how to get it working.
 published: true
