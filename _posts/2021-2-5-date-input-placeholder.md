@@ -21,6 +21,6 @@ Most of the magic happens in CSS though:
 
 <script src="https://gist.github.com/jlucaspains/9e38a97619eeeb479e71cd53c8e51f6a.js"></script>
 
-That's about it. You can see a working demo in https://jsfiddle.net/cfbpso5v/3
+That's about it. You can see a working demo in [https://jsfiddle.net/cfbpso5v/3](https://jsfiddle.net/cfbpso5v/3)
 
 Cheers, Lucas
