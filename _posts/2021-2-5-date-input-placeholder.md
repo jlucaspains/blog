@@ -4,7 +4,6 @@ title: "Date input placeholder hack"
 date: 2021-02-05
 comments: false
 sharing: true
-published: false
 categories:
   - util
   - web
