@@ -15,39 +15,11 @@ The input type date is a very nice control introduced in HTML5. The problem is t
 
 Since the placeholder attribute is not supported yet, we can use the :before pseudo element of the input. However, we only want to show the placeholder only if the input is empty and not focused. We can control the empty/not empty via a simple binding that checks the date data property as shown below.
 
-```js
-var mySimpleApp = new Vue({
-  el: '#mainapp',
-  data: {
-  	date: ""
-  },
-  template: `<input type="date" v-model="date" placeholder="Type a date" :class="{'empty': !date, 'notempty': date}" />`
-})
-```
+<script src="https://gist.github.com/jlucaspains/1b6172afb9f734881a2a0d1361cc1fe7.js"></script>
 
 Most of the magic happens in CSS though:
 
-```css
-/* HACK: When the element is empty, we want to hide the masked date input. We achieve that by changing the input color to transparent */
-input[type="date"].empty {
-  color: transparent;
-}
-/* When the input is not empty or focused, we want the color back */
-input[type="date"].notempty,
-input[type="date"].empty:focus {
-  color: #495057;
-}
-/* When the input is not empty or focused, we want the pseude :before element to have no content */
-input[type="date"].notempty:before,
-input[type="date"].empty:focus:before {
-  content: "";
-}
-/* When the input is empty and not focused (implict assumption here), we want the pseude :before element to have the content of the placeholder attribute. We also want to put the color back in the input */
-input[type="date"].empty:before {
-  content: attr(placeholder);
-  color: #6c757d;
-}
-```
+<script src="https://gist.github.com/jlucaspains/9e38a97619eeeb479e71cd53c8e51f6a.js"></script>
 
 That's about it. You can see a working demo in https://jsfiddle.net/cfbpso5v/3
 
