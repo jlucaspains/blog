@@ -85,69 +85,18 @@ Finally, appcmd won't assign certificates to HTTPS bindings. We can use netsh fo
 ## Updating configuration files
 There is a good chance you keep some settings in the appsettings.json for .NET apps and perhaps in other files for your frontend. You can easily update these settings using pipeline variables and tokenized files. I like to use [Replace Tokens from Guillaume Rouchon](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens) marketplace extension for this.
 
-Example appsettings.json:
-<br />
-```json
-{
-    "Logging": {
-        "LogLevel": {
-            "Default": "Warning"
-        }
-    },
-    "AllowedHosts": "*",
-    "ConnectionStrings": {
-        "Default": "Data Source=MyDB;Initial Catalog=DbName;Integrated Security=True;"
-    }
-}
-```
-
-Example appsettings.json after tokenization:
-<br />
-```json
-{
-    "Logging": {
-        "LogLevel": {
-            "Default": "Warning"
-        }
-    },
-    "AllowedHosts": "*",
-    "ConnectionStrings": {
-        "Default": "#{ConnectionString}#"
-    }
-}
-```
+<script src="https://gist.github.com/jlucaspains/80e65bd88993aaa499c8d7166e348587.js"></script>
 
 Make sure the variable exists in your pipeline stage:
-<br />
-```yaml
-  variables:
-    prId: "$(System.PullRequest.PullRequestId)"
-    prName: "PR$(prId)"
-    siteName: '$(prName)'
-    dbServer: 'LPainsDB'
-    dbName: '$(siteName)'
-    ConnectionString: 'server=$(dbServer);database=$(dbName);integrated security=sspi;'
-```
+
+<script src="https://gist.github.com/jlucaspains/0f3fb3ae83f4362fa3971cf7bcd6c819.js"></script>
 
 ### Add comment to Pull Request
 After the PR is deployed, you should add some instructions to the PR on how to test it. This usually includes an environment URL and anything else relevant for the test. There are many tasks to add comments to PR, but I've used [Pull Request Utils from Joachim Dalen](https://marketplace.visualstudio.com/items?itemName=joachimdalen.pull-request-utils) successfully before.
 
 In below example, we comment the URL for the environment as well as instructions on how to update the hosts file so that DNS resolution works:
-<br />
-```yaml
-- task: joachimdalen.pull-request-utils.5c6ec8a1-d04c-44c0-99b8-42dd865b42e8.PullRequestComments@0
-  displayName: 'Pull Request Comments'
-  inputs:
-    action: createOrUpdate
-    content: |
-      Environment created at https://$(siteName).lpains.com
-      
-      To access it, you need to update your hosts file. Using a powershell terminal as admin, run the following:
-      
-      ```powershell
-      Add-Content -Path $env:windir\System32\drivers\etc\hosts -Value "`n10.0.0.1`t$(siteName).lpains.com" -Force
-      ```
-```
+
+<script src="https://gist.github.com/jlucaspains/d6a855796f1fe350269115db4cdaae8b.js"></script>
 
 ## PR Environment teardown
 Because your PR Environment is in the intranet, there is a good chance you can't reach it from Azure DevOps. If this is true, you won't be able to use Webhooks to tear down your environment when the PR is closed.
@@ -159,11 +108,7 @@ You can achieve this with a bit more of powershell. Use it to read the active PR
 ## Putting everything together
 The final pipeline files may look like this:
 
-<script src="https://gist.github.com/jlucaspains/3ea5b64f77f27b29bbd3893f19ad5f4a.js"></script>
-
-<script src="https://gist.github.com/jlucaspains/010b1239b4af869fd8f51417873f2951.js"></script>
-
-<script src="https://gist.github.com/jlucaspains/75fcc580c2e125798eaf8946e91e8bbe.js"></script>
+<script src="https://gist.github.com/jlucaspains/3ea5b64f77f27b29bbd3893f19ad5f4a.js"></script
 
 ## More information
 Here is some very useful content to read how other people have done this:
