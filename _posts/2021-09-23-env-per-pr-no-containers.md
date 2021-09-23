@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 date: 2021-09-23T00:00:00.000Z
 sharing: true
@@ -46,70 +46,7 @@ In this stage, we will do everything needed to spin up a new environment. This i
 ### Restore a good backup as your PR DB
 We can achieve this somewhat easily with a procedure in master DB that you can call from Powershell. You should install the latest [Sql Server PS Module](https://www.powershellgallery.com/packages/SqlServer). Also, the user running your pipeline needs very high level privileges. I will not go into whether this is a good idea or not from a security standpoint, but do tighten your DB security as much as you can.
 
-```sql
-use MASTER;
-GO
-CREATE PROCEDURE [dbo].[spRestorePRBackup] (
-    @TargetName VARCHAR(50),
-    @SourceDb VARCHAR(50),
-    @Path VARCHAR(500)
-)
-AS BEGIN
-    -- Get the list of files from the backup file
-    DECLARE @fileListTable TABLE (
-        [LogicalName]           NVARCHAR(128),
-        [PhysicalName]          NVARCHAR(260),
-        [Type]                  CHAR(1),
-        [FileGroupName]         NVARCHAR(128),
-        [Size]                  NUMERIC(20,0),
-        [MaxSize]               NUMERIC(20,0),
-        [FileID]                BIGINT,
-        [CreateLSN]             NUMERIC(25,0),
-        [DropLSN]               NUMERIC(25,0),
-        [UniqueID]              UNIQUEIDENTIFIER,
-        [ReadOnlyLSN]           NUMERIC(25,0),
-        [ReadWriteLSN]          NUMERIC(25,0),
-        [BackupSizeInBytes]     BIGINT,
-        [SourceBlockSize]       INT,
-        [FileGroupID]           INT,
-        [LogGroupGUID]          UNIQUEIDENTIFIER,
-        [DifferentialBaseLSN]   NUMERIC(25,0),
-        [DifferentialBaseGUID]  UNIQUEIDENTIFIER,
-        [IsReadOnly]            BIT,
-        [IsPresent]             BIT,
-        [TDEThumbprint]         VARBINARY(32),
-        [SnapshotURL]           NVARCHAR(360)
-    )
-    INSERT INTO @fileListTable EXEC('RESTORE FILELISTONLY FROM DISK = N''' + @path + '''')
-
-    DECLARE @logicalDataFileName  NVARCHAR(128)
-    DECLARE @logicalLogFileName   NVARCHAR(128)
-    DECLARE @physicalDataFileName NVARCHAR(260)
-    DECLARE @physicalLogFileName NVARCHAR(260)
-
-    -- Adjust the name of the backup files using source and target db names
-    -- This is needed to make the DB file names unique
-    SELECT TOP 1 @logicalDataFileName = LogicalName, @physicalDataFileName = replace(PhysicalName, @sourceDb,@targetName)
-    FROM @fileListTable
-    WHERE Type = 'D'
-
-    SELECT TOP 1 @logicalLogFileName = LogicalName, @physicalLogFileName = replace(PhysicalName, @sourceDb,@targetName)
-    FROM @fileListTable
-    WHERE Type = 'L'
-
-    -- If the DB exists, set it to single user so the restore won't fail
-    IF (db_id(@targetName) IS NOT NULL)
-    BEGIN
-        EXEC('ALTER DATABASE [' + @targetName + '] SET SINGLE_USER WITH ROLLBACK IMMEDIATE')
-    END
-
-    -- trigger the restore
-    RESTORE DATABASE @targetName FROM DISK = @path WITH FILE = 1, MOVE @logicalDataFileName TO @physicalDataFileName, MOVE @logicalLogFileName TO @physicalLogFileName
-    
-    -- put the db back in multi user mode
-    EXEC('ALTER DATABASE [' + @targetName + '] SET MULTI_USER')
-END
-```
+<script src="https://gist.github.com/jlucaspains/e8c05c31501be81302c766b7de185652.js"></script>
 
 Then, you can invoke that procedure from Powershell like so:
 
