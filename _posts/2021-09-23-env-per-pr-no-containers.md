@@ -50,15 +50,7 @@ We can achieve this somewhat easily with a procedure in master DB that you can c
 
 Then, you can invoke that procedure from Powershell like so:
 
-```powershell
-Import-Module SQLServer
-
-# This will check if the DB already exists, if it does, skip the restore
-# $DbName variable will be based on your PR number
-# The SourceDb is used to rename the original SQL Server files to something unique using the PR number
-# This script is using a server share for .bak files. You may change this and have a backup file ready in your SQL Server instead.
-Invoke-Sqlcmd -ServerInstance MySQLServer -database master -query "IF(DB_ID('$(DbName)') IS NULL) exec spRestorePRBackup @TargetName = '$(DbName)', @SourceDb = 'MyAppDB', @Path = '\\MyServerShare\dbbackup\PR.BAK'"
-```
+<script src="https://gist.github.com/jlucaspains/be54a3c49e61799be10fd695dadbb3e7.js"></script>
 
 ### Update DB version with PR migrations
 By now, most projects are using Db Migrations one way or another. I typically do them the old fashioned way where the developer is responsible for manually creating versioned scripts. If you have the scripts in a folder like I do, [DbUp](https://dbup.github.io/) is a great tool to update your DB. There is also a [Visual Studio Marketplace extension](https://marketplace.visualstudio.com/items?itemName=johanclasson.UpdateDatabaseWithDbUp) for it. 
@@ -68,65 +60,33 @@ You may use EF migrations or anything else that suites you though.
 ### Deploy IIS website(s) from template xml
 You can achieve this using [appcmd](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj635852(v=ws.11)) and [netsh](https://docs.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh-contexts) as they should be installed with any IIS version you may use. Below are some commands that can be executed in powershell to create a website:
 
-```cmd
-appcmd add apppool /name:MyAppPool
-appcmd add site /name:MySite /bindings:"https/mysite.lpains.com:443:" /physicalPath:"C:\inetpub\wwwroot\MySite" /applicationPool:"MyAppPool"
-```
+<script src="https://gist.github.com/jlucaspains/a4dbd315c2c8b380651b8f879e67f04e.js"></script>
 
 You can either create the website and app pool with specific commands like above, or, you can export and import the site and app pool. First, export existing site and app pool:
-
-```cmd
-appcmd list apppool TemplateAppPool  /config /xml > c:\apppools.xml
-appcmd list site TemplateSite /config /xml > c:\sites.xml
-```
+ 
+<script src="https://gist.github.com/jlucaspains/6cd808bf874080cc733aff7129d982d9.js"></script>
 
 Since we want each PR site to be unique, we need to do some templating in the xml files. Just change the app pool and site names to something you can find and replace later via powershell:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<appcmd>
-  <APPPOOL APPPOOL.NAME="[SiteName]" PipelineMode="Integrated" RuntimeVersion="" state="Started">
-    <add name="[SiteName]" managedRuntimeVersion="">
-        <processModel identityType="SpecificUser" userName="user" password="password" />
-    </add>
-  </APPPOOL>
-</appcmd>
-```
+<script src="https://gist.github.com/jlucaspains/c697de5e6bd83cbe769ed9db115173fd.js"></script>
 
 You can then use some powershell to replace the placeholder before using appcmd to apply the file:
 
-```powershell
-# $(siteName) variable must be unique. I recommend using the PR Number in it 
-$parsedSite = (Get-Content "c:\sites.xml" -raw) -replace "\[SiteName\]","$(siteName)"
-
-$parsedSite | Set-Content "c:\sites.xml"
-
-$parsedAppPool = (Get-Content "c:\apppool.xml" -raw) -replace "\[SiteName\]","$(siteName)"
-
-$parsedAppPool | Set-Content "c:\apppool.xml"
-```
+<script src="https://gist.github.com/jlucaspains/2c5fe35e3250f3b3e348da088daeb5a7.js"></script>
 
 Finally, use cmd and below commands to import the site and app pool:
 
-```cmd
-mkdir c:\inetpub\wwwroot\$siteName
-appcmd add apppool /in < c:\apppools.xml
-appcmd add site /in < c:\sites.xml
-```
+<script src="https://gist.github.com/jlucaspains/015286b745b445754390d9fa936fede1.js"></script>
 
 Finally, appcmd won't assign certificates to HTTPS bindings. We can use netsh for that though:
 
-```powershell
-$guid = [guid]::NewGuid().ToString("B")
-
-netsh http add sslcert hostnameport="$siteName.lpains.com:443" certhash=thumbprint certstorename=MY appid="$guid"
-```
+<script src="https://gist.github.com/jlucaspains/d37b7b9dfd1e17c28c091f687449be8e.js"></script>
 
 ## Updating configuration files
 There is a good chance you keep some settings in the appsettings.json for .NET apps and perhaps in other files for your frontend. You can easily update these settings using pipeline variables and tokenized files. I like to use [Replace Tokens from Guillaume Rouchon](https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens) marketplace extension for this.
 
 Example appsettings.json:
-
+<br />
 ```json
 {
     "Logging": {
@@ -142,7 +102,7 @@ Example appsettings.json:
 ```
 
 Example appsettings.json after tokenization:
-
+<br />
 ```json
 {
     "Logging": {
@@ -158,7 +118,7 @@ Example appsettings.json after tokenization:
 ```
 
 Make sure the variable exists in your pipeline stage:
-
+<br />
 ```yaml
   variables:
     prId: "$(System.PullRequest.PullRequestId)"
@@ -173,7 +133,7 @@ Make sure the variable exists in your pipeline stage:
 After the PR is deployed, you should add some instructions to the PR on how to test it. This usually includes an environment URL and anything else relevant for the test. There are many tasks to add comments to PR, but I've used [Pull Request Utils from Joachim Dalen](https://marketplace.visualstudio.com/items?itemName=joachimdalen.pull-request-utils) successfully before.
 
 In below example, we comment the URL for the environment as well as instructions on how to update the hosts file so that DNS resolution works:
-
+<br />
 ```yaml
 - task: joachimdalen.pull-request-utils.5c6ec8a1-d04c-44c0-99b8-42dd865b42e8.PullRequestComments@0
   displayName: 'Pull Request Comments'
@@ -194,43 +154,7 @@ Because your PR Environment is in the intranet, there is a good chance you can't
 
 You can achieve this with a bit more of powershell. Use it to read the active PRs and compare to the active environments. If any environment does not have a corresponding open PR, you can tear it down.
 
-```powershell
-## remember to run this script as an Admin
-Import-Module SQLServer
-
-# get open PRs from your repository
-$B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("your pat token goes here"))
-$header = @{Authorization = "Basic $B64Pat"}
-$url = "https://dev.azure.com/your-org/your-project/_apis/git/pullrequests?repositoryId=d26dc76c-6593-4612-acde-4ac37af9cf2f&includeCommits=false&includeWorkItemRefs=false"
-$prArray = (Invoke-RestMethod -Uri $url -Method Get -ContentType "application/json" -Headers $header).value
-
-# find the existing environments in the VM
-$envs = Get-ChildItem -filter "lpainsPR*" -Directory | Select-Object Fullname, Name
-
-foreach($env in $envs){
-     $prId = $env.Name -replace "lpainsPR", ""
-     # find the PR by number
-     $pr = $prArray | Where-Object { $_.pullRequestId -eq $prId }
-     # if a PR is not found for the environment, tear it down!
-     if ($null -eq $pr ) {
-         Write-Host "Removing PR$prId"
-
-         # delete web sites
-         appcmd.exe delete site "$($env.Name)_UI"
-         appcmd.exe delete site "$($env.Name)_API"
-
-         # delete app pools
-         appcmd.exe delete apppool "$($env.Name)_UI"
-         appcmd.exe delete apppool "$($env.Name)_API"
-
-         # delete files
-         Remove-Item -Recurse -Force $env.FullName
-		 
-         # drop database
-		     Invoke-Sqlcmd -ServerInstance LPainsDB -database master -query "DROP DATABASE $($env.Name)"
-     }
-}
-```
+<script src="https://gist.github.com/jlucaspains/92d71fd346106e657138f796ab3a708c.js"></script>
 
 ## Putting everything together
 The final pipeline files may look like this:
