@@ -33,9 +33,7 @@ I'm sure that what I will be showing here is not directly applicable to you, but
 
 ## The main pipeline
 
-The pipeline yaml will look like below. For organization sake, I broke it down into 3 files: main pipeline, build stage, deploy pr stage.
-
-<script src="https://gist.github.com/jlucaspains/3ea5b64f77f27b29bbd3893f19ad5f4a.js"></script>
+The main pipeline will only describe the stages and set up the parameters. All the actual work happens in the build and deploy stages. Skip to the end of the article to see the complete pipeline yaml files.
 
 ## Build stage
 In this stage we want to build the app(s) and publish any deployables as build artifacts. I will assume that you have your app built and ready to be deployed so I won't provide details on how to do this. For the purposes of this post, you should have your backend, frontend, and db migrations as published artifacts in your build.
@@ -106,10 +104,12 @@ You can achieve this with a bit more of powershell. Use it to read the active PR
 <script src="https://gist.github.com/jlucaspains/92d71fd346106e657138f796ab3a708c.js"></script>
 
 ## Putting everything together
+There are a lot of steps to do and they are harder than they would be in more "modern" scenarios. The key point is: you don't need containers to get Environments per PR.
+
 The final pipeline files may look like this:
 
 <script src="https://gist.github.com/jlucaspains/3ea5b64f77f27b29bbd3893f19ad5f4a.js"></script
-
+  
 ## More information
 Here is some very useful content to read how other people have done this:
 
